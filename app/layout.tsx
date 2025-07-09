@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import { Inter, Jersey_20 } from "next/font/google";
+import localFont from "next/font/local";
+
+const otomanopee = localFont({
+  src: "./fonts/OtomanopeeOne.ttf",
+  variable: "--font-otomanopee",
+  weight: "400",
+});
+
 import "./globals.css";
 
 const inter = Inter({
@@ -25,9 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${jersey.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${jersey.variable} ${otomanopee.variable} antialiased`}>
         <Navbar />
         {children}
       </body>
