@@ -1,5 +1,4 @@
 import * as React from "react";
-import { GhostWink } from "@/components/Icon";
 
 function CustomButton2({
   className,

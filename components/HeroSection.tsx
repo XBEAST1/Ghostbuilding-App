@@ -30,13 +30,13 @@ const HeroSection = () => {
           href="/hackathon"
           className="flex items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm border border-white font-medium text-white text-center max-w-xs sm:max-w-full"
         >
-          🏆 Join the World's Largest Hackathon - $100k in prizes!
+          🏆 Join the World&apos;s Largest Hackathon - $100k in prizes!
         </Link>
       </div>
 
       {/* Main content */}
       <div className="text-center w-full max-w-5xl px-2">
-        <h1 className="mt-4 text-3xl sm:text-5xl md:text-6xl font-[family-name:var(--font-jersey)] leading-tight">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-[family-name:var(--font-jersey)] leading-tight">
           <span className="text-[#A46EFF]">GhostBuilder</span> Builds. You
           Scale.
         </h1>

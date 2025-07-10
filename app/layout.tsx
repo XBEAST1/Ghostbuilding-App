@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import { Inter, Jersey_20 } from "next/font/google";
+import { Inter, Jersey_20, Poppins } from "next/font/google";
 import localFont from "next/font/local";
+import "./globals.css";
 
 const otomanopee = localFont({
   src: "./fonts/OtomanopeeOne.ttf",
@@ -9,7 +10,11 @@ const otomanopee = localFont({
   weight: "400",
 });
 
-import "./globals.css";
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["400", "500" , "800"],
+  subsets: ["latin"],
+});
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,6 +24,7 @@ const inter = Inter({
 const jersey = Jersey_20({
   variable: "--font-jersey",
   weight: "400",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${jersey.variable} ${otomanopee.variable} antialiased`}>
+      <body className={`${inter.variable} ${jersey.variable} ${otomanopee.variable} ${poppins.variable} antialiased`}>
         <Navbar />
         {children}
       </body>

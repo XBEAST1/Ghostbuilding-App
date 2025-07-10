@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { NavbarIcon } from "@/components/Icon";
+import { GhostIcon } from "@/components/Icon";
 import CustomButton2 from "@/components/CustomButton2";
 import CustomButton3 from "@/components/CustomButton3";
 
@@ -19,9 +19,10 @@ const Navbar = () => {
   return (
     <nav className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto flex w-full items-center justify-between px-6 sm:px-10 md:px-16 lg:px-24 py-4 backdrop-blur-md bg-black/0">
-        {/* Left: Logo + Desktop links */}
         <div className="flex items-center gap-6 lg:gap-10">
-          <NavbarIcon />
+          <Link href="/">
+            <GhostIcon className="pt-2" />
+          </Link>
           <div className="hidden lg:flex items-center gap-10">
             {links.map(({ href, label }) => (
               <Link
