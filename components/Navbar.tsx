@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { GhostIcon } from "@/components/Icon";
+import { GhostIcon, GhostWink } from "@/components/Icon";
 import CustomButton2 from "@/components/CustomButton2";
 import CustomButton3 from "@/components/CustomButton3";
+import { Button } from "@/components/ui/button";
 
 const links = [
   { href: "/community", label: "Community" },
@@ -36,12 +37,20 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Right: CTA buttons or hamburger */}
         <div className="flex items-center gap-3">
           {/* Desktop CTAs */}
-          <div className="hidden lg:flex gap-3">
+          {/* <div className="hidden lg:flex gap-3">
             <CustomButton3>Login</CustomButton3>
             <CustomButton2>Try Ghostbuilding</CustomButton2>
+          </div> */}
+
+          <div className="hidden lg:flex gap-3">
+            <Button className="cursor-pointer inline-flex items-center gap-2 px-3 py-2 bg-transparent hover:bg-transparent hover:shadow-none focus-visible:ring-0 focus:outline-none">
+              <div className="bg-[#4C1AA2] p-3 rounded-lg">
+                <GhostWink className="h-4 w-4" />
+              </div>
+              <span className="text-sm font-bold">XBEAST&apos;s Ghosty</span>
+            </Button>
           </div>
 
           {/* Mobile hamburger */}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
 import { Inter, Jersey_20, Poppins } from "next/font/google";
 import localFont from "next/font/local";
+import LayoutWrapper from "@/components/LayoutWrapper";
 import "./globals.css";
 
 const otomanopee = localFont({
@@ -40,8 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${jersey.variable} ${otomanopee.variable} ${poppins.variable} antialiased`}>
-        <Navbar />
-        {children}
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );
