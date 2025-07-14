@@ -35,7 +35,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main content */}
-      <div className="text-center w-full max-w-5xl px-2">
+      <div className="mt-4 text-center w-full max-w-5xl px-2">
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-[family-name:var(--font-jersey)] leading-tight">
           <span className="text-[#A46EFF]">GhostBuilder</span> Builds. You
           Scale.

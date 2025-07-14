@@ -4,9 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { GhostIcon, GhostWink } from "@/components/Icon";
-import CustomButton2 from "@/components/CustomButton2";
-import CustomButton3 from "@/components/CustomButton3";
+// import CustomButton2 from "@/components/CustomButton2";
+// import CustomButton3 from "@/components/CustomButton3";
 import { Button } from "@/components/ui/button";
+import SettingsPopover from "@/components/SettingsPopover";
 
 const links = [
   { href: "/community", label: "Community" },
@@ -16,6 +17,7 @@ const links = [
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [popoverOpen, setPopoverOpen] = useState(false);
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50">
@@ -45,12 +47,24 @@ const Navbar = () => {
           </div> */}
 
           <div className="hidden lg:flex gap-3">
-            <Button className="cursor-pointer inline-flex items-center gap-2 px-3 py-2 bg-transparent hover:bg-transparent hover:shadow-none focus-visible:ring-0 focus:outline-none">
-              <div className="bg-[#4C1AA2] p-3 rounded-lg">
-                <GhostWink className="h-4 w-4" />
-              </div>
-              <span className="text-sm font-bold">XBEAST&apos;s Ghosty</span>
-            </Button>
+            <SettingsPopover
+              userName="XBEAST's Ghosty"
+              userEmail="xbeast1@proton.me"
+              creditsUsed={10}
+              maxCredits={20}
+              open={popoverOpen}
+              onOpenChange={setPopoverOpen}
+            >
+              <Button
+                className="cursor-pointer inline-flex items-center gap-2 px-3 py-2 bg-transparent hover:bg-transparent hover:shadow-none focus-visible:ring-0 focus:outline-none"
+                onClick={() => setPopoverOpen(!popoverOpen)}
+              >
+                <div className="bg-[#4C1AA2] p-3 rounded-lg">
+                  <GhostWink className="h-4 w-4" />
+                </div>
+                <span className="text-sm font-bold">XBEAST&apos;s Ghosty</span>
+              </Button>
+            </SettingsPopover>
           </div>
 
           {/* Mobile hamburger */}
@@ -77,8 +91,18 @@ const Navbar = () => {
                 {label}
               </Link>
             ))}
-            <CustomButton3 className="w-full">Login</CustomButton3>
-            <CustomButton2 className="w-full">Try Ghostbuilding</CustomButton2>
+            {/* <CustomButton3 className="w-full">Login</CustomButton3>
+            <CustomButton2 className="w-full">Try Ghostbuilding</CustomButton2> */}
+
+            <Button
+              className="cursor-pointer inline-flex items-center gap-2 px-3 py-2 bg-transparent hover:bg-transparent hover:shadow-none focus-visible:ring-0 focus:outline-none"
+              onClick={() => setPopoverOpen(!popoverOpen)}
+            >
+              <div className="bg-[#4C1AA2] p-3 rounded-lg">
+                <GhostWink className="h-4 w-4" />
+              </div>
+              <span className="text-sm font-bold">XBEAST&apos;s Ghosty</span>
+            </Button>
           </div>
         </div>
       )}
