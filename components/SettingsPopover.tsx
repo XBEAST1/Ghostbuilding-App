@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Popover,
   PopoverContent,
@@ -19,6 +20,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ChevronRight, PlusIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import SettingsModal from "./SettingsModal";
 
 interface SettingsPopoverProps {
   userName: string;
@@ -43,6 +45,16 @@ const SettingsPopover = ({
   open,
   onOpenChange,
 }: SettingsPopoverProps) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <Popover open={open} onOpenChange={onOpenChange}>
       <PopoverTrigger asChild>
@@ -99,11 +111,18 @@ const SettingsPopover = ({
           </div>
 
           <div className="flex gap-3">
-            <Button className="bg-[#233557]">
+            <Button
+              className="bg-[#233557] cursor-pointer"
+              onClick={handleOpenModal}
+            >
               <SettingsIcon className="!w-5 !h-5" />
               Settings
             </Button>
-            <Button className="bg-[#233557]">
+
+            {/* Render the modal conditionally */}
+            {isModalOpen && <SettingsModal onClose={handleCloseModal} />}
+
+            <Button className="bg-[#233557] cursor-pointer">
               <InviteIcon className="!w-5 !h-5" />
               Invite
             </Button>

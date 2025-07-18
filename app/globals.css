@@ -127,3 +127,26 @@
       background-position: top left, top right, center;
     }
 }
+
+/* Global Scrollbar Styling */
+html {
+  scrollbar-color: #152137 #0A101A;
+  scrollbar-width: auto;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #0A101A;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #152137;
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #1E2A3A;
+}
