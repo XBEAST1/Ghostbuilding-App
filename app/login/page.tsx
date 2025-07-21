@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
+import { login } from "@/actions/auth";
 import { GhostIcon, GoogleIcon, GithubIcon } from "@/components/Icon";
 
 const Page = () => {
@@ -17,6 +18,7 @@ const Page = () => {
             <Button
               variant="outline"
               className="cursor-pointer w-full bg-[#414653] border-none p-6 rounded-lg hover:bg-[#6e7483] hover:text-white"
+              onClick={() => login("google")}
             >
               <span className="flex items-center justify-center gap-2">
                 <GoogleIcon />
@@ -26,6 +28,7 @@ const Page = () => {
             <Button
               variant="outline"
               className="cursor-pointer w-full bg-[#414653] border-none p-6 rounded-lg hover:bg-[#6e7483] hover:text-white"
+              onClick={() => login("github")}
             >
               <span className="flex items-center justify-center gap-2">
                 <GithubIcon />
